@@ -1,0 +1,158 @@
+@tailwind base;
+
+@keyframes pulse-slow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* Mercado Livre Design System - Amarelo e Azul */
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 220 13% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 18%;
+
+    /* Amarelo Mercado Livre */
+    --primary: 54 100% 50%;
+    --primary-foreground: 220 13% 18%;
+
+    /* Azul Mercado Livre */
+    --secondary: 216 95% 59%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 216 95% 59%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 216 95% 59%;
+
+    --radius: 0.5rem;
+
+    /* Custom colors */
+    --ml-yellow: 54 100% 50%;
+    --ml-yellow-hover: 54 100% 45%;
+    --ml-blue: 216 95% 59%;
+    --ml-blue-hover: 216 95% 50%;
+    --ml-blue-dark: 216 90% 35%;
+    --ml-green: 145 63% 42%;
+    --ml-gray-light: 220 14% 96%;
+    --ml-gray: 220 9% 46%;
+
+    /* Gradients */
+    --gradient-header: linear-gradient(180deg, hsl(54 100% 50%) 0%, hsl(54 100% 45%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(216 95% 59%) 0%, hsl(216 90% 45%) 100%);
+
+    /* Shadows */
+    --shadow-card: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-card-hover: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
+    --shadow-header: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 13% 10%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 13% 14%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 13% 14%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 54 100% 50%;
+    --primary-foreground: 220 13% 18%;
+
+    --secondary: 216 95% 59%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 13% 20%;
+    --muted-foreground: 220 9% 65%;
+
+    --accent: 216 95% 59%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 13% 20%;
+    --input: 220 13% 20%;
+    --ring: 216 95% 59%;
+
+    --sidebar-background: 220 13% 10%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 216 95% 59%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 13% 16%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 220 13% 20%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-card-hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .gradient-header {
+    background: var(--gradient-header);
+  }
+
+  .gradient-cta {
+    background: var(--gradient-cta);
+  }
+}
